@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sr" data-tenant="savoca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="Portal za kuhinju — Savoca" />
+    <meta name="theme-color" content="#141210" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Kuhinja" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/savoca-ns/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/savoca-ns/apple-touch-icon.png" />
+    <!-- The kitchen's own manifest, in the HTML from the start: iOS Safari reads the manifest link when the page loads and
+         ignores a later change by the app, so a dynamically swapped link made "Add to Home Screen" install the customer app. -->
+    <link rel="manifest" href="/savoca-ns/manifest-kuhinja.webmanifest" />
+    <title>Kuhinja · Savoca</title>
+    <style>
+      /* Splash painted before the JS bundle arrives: the kitchen is dark, so the splash is too. */
+      html, body, #root { height: 100%; margin: 0; }
+      body { background: #141210; }
+      .splash { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--color-cream-100, #fff); }
+      .splash-name { font-family: var(--font-display, sans-serif); font-weight: var(--display-weight, 400); font-size: calc(40px * var(--display-scale, 1)); letter-spacing: var(--display-tracking, 0.02em); text-transform: var(--display-case, none); }
+      .splash-sub { font: 600 12px -apple-system, BlinkMacSystemFont, system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+    </style>
+  <style id="tenant-theme">
+ html[data-tenant="savoca"] {
+  --color-cream-50: #1F1C19;
+  --color-cream-100: #141210;
+  --color-cream-200: #1A1715;
+  --color-cream-300: #36312C;
+  --color-cream-400: #58514A;
+  --color-azure-100: #3A2416;
+  --color-azure-200: #D9611A;
+  --color-azure-300: #EE6E21;
+  --color-azure-400: #F5843D;
+  --color-on-primary: #1C0D03;
+  --color-forest-950: #FFFFFF;
+  --color-forest-900: #F5EFE7;
+  --color-forest-800: #FBF6EF;
+  --color-forest-700: #ECE4D8;
+  --color-forest-600: #CBC2B4;
+  --color-forest-500: #A39A8C;
+  --color-forest-400: #877F72;
+  --color-flame-100: #17301F;
+  --color-flame-200: #255C38;
+  --color-flame-500: #1F8A4C;
+  --color-flame-600: #45B06E;
+  --color-flame-700: #86D3A2;
+  --color-tomato-500: #F0665A;
+  --color-tomato-100: #3C1F1A;
+  --color-basil-500: #8DB474;
+  --color-basil-100: #1F2C1A;
+  --color-notice-500: #E8B64A;
+  --color-notice-100: #3A2D10;
+  --color-ink: #F5EFE7;
+  --color-ink-2: #CBC2B4;
+  --color-ink-3: #948B7E;
+  --font-display: "Oswald", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --display-scale: 0.82;
+  --display-tracking: 0.01em;
+  --display-case: uppercase;
+  --display-weight: 500;
+  --motif: radial-gradient(130% 95% at 50% 0%, rgba(238, 110, 33, 0.42) 0%, rgba(238, 110, 33, 0.12) 45%, transparent 72%), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 10px), linear-gradient(#181512, #181512);
+  --glass-bg: rgba(20, 18, 16, 0.82);
+ }
+/* self-hosted display font (latin + latin-ext for Serbian diacritics); /savoca-ns/ is filled in by vite.config.ts.
+   Oswald is a variable font (200–700): one file per subset covers every weight. */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url(/savoca-ns/fonts/oswald-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url(/savoca-ns/fonts/oswald-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    
+    <script type="module" crossorigin src="/savoca-ns/assets/main-C0UwwvhN.js"></script>
+    <link rel="stylesheet" crossorigin href="/savoca-ns/assets/main-0Woaj26n.css"><script id="vite-plugin-pwa:register-sw" src="/savoca-ns/registerSW.js"></script></head>
+  <body>
+    <div id="root"><div class="splash"><span class="splash-name">KUHINJA</span><span class="splash-sub">Savoca · Učitavanje</span></div></div>
+  </body>
+</html>

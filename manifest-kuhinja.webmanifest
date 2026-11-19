@@ -1,0 +1,26 @@
+{
+  "id": "/savoca-ns/kuhinja",
+  "name": "Savoca · Kuhinja",
+  "short_name": "Kuhinja",
+  "description": "Portal za kuhinju — Savoca Pizzeria & Ristorante",
+  "lang": "sr",
+  "start_url": "/savoca-ns/kuhinja",
+  "scope": "/savoca-ns/kuhinja",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#141210",
+  "background_color": "#141210",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
